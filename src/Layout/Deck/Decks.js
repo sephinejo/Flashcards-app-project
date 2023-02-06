@@ -5,11 +5,11 @@ export default function Decks({ decks, deleteDeckHandler }) {
   // Mapping through preview of decks
   return (
     <div>
-      {decks.map((deck, index) => (
+      {decks.map((deck) => (
         <DeckPreview
+          key={deck.id}
           deck={deck}
           deleteDeckHandler={deleteDeckHandler}
-          index={index}
         />
       ))}
     </div>

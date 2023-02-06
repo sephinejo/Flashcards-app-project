@@ -23,7 +23,7 @@ export default function Deck({ deleteDeckHandler }) {
 
   return (
     <div>
-      <Breadcrumbs current='React Router' />
+      <Breadcrumbs current={deck.name} />
       <h3>{deck.name}</h3>
       <p>{deck.description}</p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>

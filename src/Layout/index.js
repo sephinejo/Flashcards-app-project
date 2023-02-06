@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Common/Header';
 import Home from './Common/Home';
 import NotFound from './Common/NotFound';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import { listDecks, deleteDeck } from '../utils/api';
 import Deck from './Deck/Deck';
 import StudyDeck from './Deck/StudyDeck';
@@ -14,6 +14,7 @@ import EditDeck from './Deck/EditDeck';
 
 function Layout() {
   const [decks, setDecks] = useState([]);
+  const history = useHistory();
 
   // Handle deleting a deck
   const deleteDeckHandler = async (indexToDelete) => {
@@ -26,6 +27,8 @@ function Layout() {
     if (window.confirm(message)) {
       await deleteDeck(indexToDelete);
     }
+
+    history.push('/');
     window.location.reload();
   };
 

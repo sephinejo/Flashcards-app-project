@@ -15,7 +15,7 @@ export default function CreateDeck() {
     setFormData({ ...formData, [target.name]: target.value });
   };
 
-  // Handle submitted data and create new deck with it
+  // Handle submitted deck data and create new deck with it
   const submitHandler = (e) => {
     e.preventDefault();
 

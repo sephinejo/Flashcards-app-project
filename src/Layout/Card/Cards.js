@@ -18,12 +18,16 @@ export default function Cards({ deck }) {
   };
 
   return (
-    <>
+    <div>
       <h2 style={{ margin: '1.5rem 0 0.5rem' }}>Cards</h2>
       {/* Mapping through card content */}
       {deck.cards?.map((card) => (
-        <CardContent card={card} deleteCardHandler={deleteCardHandler} />
+        <CardContent
+          key={card.id}
+          card={card}
+          deleteCardHandler={deleteCardHandler}
+        />
       ))}
-    </>
+    </div>
   );
 }

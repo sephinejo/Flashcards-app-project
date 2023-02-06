@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { BsTrash } from 'react-icons/bs';
@@ -15,12 +13,12 @@ export default function CardContent({ card, deleteCardHandler }) {
     // Card content format
     <Card>
       <Card.Body>
-        <Container style={{ margin: '0 0 2rem' }}>
-          <Row>
+        <div className='container' style={{ margin: '0 0 2rem' }}>
+          <div className='row'>
             <Col>{card.front}</Col>
             <Col>{card.back}</Col>
-          </Row>
-        </Container>
+          </div>
+        </div>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <span style={{ display: 'flex' }}>
             {/* Button to edit a card */}
